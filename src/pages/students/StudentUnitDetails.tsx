@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import studentAxios from "../../api/studentAxios";
-import { ArrowLeftCircle, BookOpen, HelpCircle, Brain } from "lucide-react";
+import { ArrowLeftCircle, BookOpen, HelpCircle } from "lucide-react";
 
 interface QA {
   q: string;

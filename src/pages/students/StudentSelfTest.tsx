@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import studentAxios from "../../api/studentAxios";
-import { Brain, Loader2, ArrowLeftCircle, Trophy } from "lucide-react";
+import {  Loader2, ArrowLeftCircle, Trophy } from "lucide-react";
 
 interface MCQ {
   q: string;

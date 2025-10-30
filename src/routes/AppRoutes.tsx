@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import AdminLogin from "../pages/admin/AdminLogin.tsx";
 import StudentDashboard from "../pages/students/StudentDashboard.tsx";
