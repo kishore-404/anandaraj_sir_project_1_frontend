@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import  { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import AdminLogin from "../pages/admin/AdminLogin.tsx";
 import StudentDashboard from "../pages/students/StudentDashboard.tsx";
@@ -20,7 +20,7 @@ const RouteWrapper = () => {
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 500); // Adjust for smoother UX
+    const timeout = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timeout);
   }, [location]);
 
@@ -28,6 +28,9 @@ const RouteWrapper = () => {
     <>
       {loading && <Loader />}
       <Routes>
+        {/* 👇 Default route redirects to student login */}
+        <Route path="/" element={<Navigate to="/student/login" replace />} />
+
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/subjects/:subjectId" element={<SubjectDetails />} />
@@ -39,6 +42,7 @@ const RouteWrapper = () => {
           path="/admin/subjects/:subjectId/units/:unitId"
           element={<UnitDetails />}
         />
+
         <Route path="/student/login" element={<StudentLogin />} />
         <Route path="/student/setup" element={<StudentProfileSetup />} />
         <Route path="/student/dashboard" element={<StudentDashboard />} />
@@ -54,6 +58,7 @@ const RouteWrapper = () => {
           path="/student/subjects/:subjectId/units/:unitId/selftest"
           element={<SelfTestPage />}
         />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
