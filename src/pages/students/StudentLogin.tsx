@@ -21,7 +21,7 @@ export default function StudentLogin() {
   const [quote, setQuote] = useState("");
 
   useEffect(() => {
-    // clearing old token so new student setup will run correctly
+    // Clear old token so new student setup will run correctly
     localStorage.removeItem("studentToken");
 
     const params = new URLSearchParams(window.location.search);
@@ -29,6 +29,9 @@ export default function StudentLogin() {
 
     if (token) {
       localStorage.setItem("studentToken", token);
+
+      // Set token in Axios header
+      studentAxios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       studentAxios
         .get("/auth/me")
