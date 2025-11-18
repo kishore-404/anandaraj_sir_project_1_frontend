@@ -10,7 +10,7 @@ export function Navbar({ onLogout }: NavbarProps) {
       <h2 className="text-xl font-bold text-gray-700">📚 Smart LMS Admin</h2>
       <button
         onClick={onLogout}
-        className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600 transition"
+        className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition"
       >
         Logout
       </button>
