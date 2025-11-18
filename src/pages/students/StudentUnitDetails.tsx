@@ -134,46 +134,48 @@ const StudentUnitDetails: React.FC = () => {
           📂 Uploaded Files
         </h3>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {unit.unitFileUrl && (
-            <a
-              href={`http://localhost:5000${unit.unitFileUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
-            >
-              📘 Unit File
-            </a>
-          )}
-          {unit.twoMarkFileUrl && (
-            <a
-              href={`http://localhost:5000${unit.twoMarkFileUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
-            >
-              ✏️ 2 Mark File
-            </a>
-          )}
-          {unit.fiveMarkFileUrl && (
-            <a
-              href={`http://localhost:5000${unit.fiveMarkFileUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
-            >
-              📝 5 Mark File
-            </a>
-          )}
-          {unit.tenMarkFileUrl && (
-            <a
-              href={`http://localhost:5000${unit.tenMarkFileUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
-            >
-              📄 10 Mark File
-            </a>
-          )}
+          // Inside the JSX where you render uploaded files:
+{unit.unitFileUrl && (
+  <a
+    href={`https://anandaraj-sir-project-1-backend.onrender.com${unit.unitFileUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
+  >
+     Unit File
+  </a>
+)}
+{unit.twoMarkFileUrl && (
+  <a
+    href={`https://anandaraj-sir-project-1-backend.onrender.com${unit.twoMarkFileUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
+  >
+     2 Mark File
+  </a>
+)}
+{unit.fiveMarkFileUrl && (
+  <a
+    href={`https://anandaraj-sir-project-1-backend.onrender.com${unit.fiveMarkFileUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
+  >
+     5 Mark File
+  </a>
+)}
+{unit.tenMarkFileUrl && (
+  <a
+    href={`https://anandaraj-sir-project-1-backend.onrender.com${unit.tenMarkFileUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
+  >
+     10 Mark File
+  </a>
+)}
+
         </div>
         {/* Actions */}
         <div className="flex flex-wrap justify-center gap-4 mt-10">

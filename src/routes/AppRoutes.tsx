@@ -13,6 +13,7 @@ import StudentProfileSetup from "../pages/students/CompleteProfile.tsx";
 import StudentSubjectDetails from "../pages/students/StudentSubjectDetails.tsx";
 import StudentUnitDetails from "../pages/students/StudentUnitDetails.tsx";
 import SelfTestPage from "../pages/students/StudentSelfTest.tsx";
+import StudentList from "../pages/admin/StudentList.tsx";
 
 const RouteWrapper = () => {
   const location = useLocation();
@@ -26,13 +27,15 @@ const RouteWrapper = () => {
 
   return (
     <>
-      {loading && <Loader />}
+     
       <Routes>
         {/* 👇 Default route redirects to student login */}
         <Route path="/" element={<Navigate to="/student/login" replace />} />
 
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+         <Route path="/admin/students" element={<StudentList />} />
+         
         <Route path="/admin/subjects/:subjectId" element={<SubjectDetails />} />
         <Route
           path="/admin/subjects/:subjectId/units/create"

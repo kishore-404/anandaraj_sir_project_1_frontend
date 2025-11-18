@@ -21,6 +21,9 @@ export default function StudentLogin() {
   const [quote, setQuote] = useState("");
 
   useEffect(() => {
+    // clearing old token so new student setup will run correctly
+    localStorage.removeItem("studentToken");
+
     const params = new URLSearchParams(window.location.search);
     const token = params.get("token");
 
@@ -31,6 +34,7 @@ export default function StudentLogin() {
         .get("/auth/me")
         .then((res) => {
           const student = res.data;
+
           if (!student.name || !student.department) {
             navigate("/student/setup");
           } else {
@@ -47,7 +51,8 @@ export default function StudentLogin() {
   }, []);
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href =
+      "https://anandaraj-sir-project-1-backend.onrender.com/api/auth/google";
   };
 
   return (

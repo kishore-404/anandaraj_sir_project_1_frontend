@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const adminAxios = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://anandaraj-sir-project-1-backend.onrender.com/api",
 });
 
 // 🔹 Automatically attach admin token

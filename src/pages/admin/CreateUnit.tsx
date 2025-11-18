@@ -76,7 +76,7 @@ const CreateUnit: React.FC = () => {
   return (
     <div className="flex min-h-screen  from-gray-50 to-gray-100 text-gray-900">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <div className="flex flex-col flex-1">

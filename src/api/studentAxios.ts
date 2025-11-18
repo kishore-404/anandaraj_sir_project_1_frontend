@@ -3,7 +3,7 @@ import axios from "axios";
 import type { AxiosInstance, InternalAxiosRequestConfig } from "axios"; // ✅ type-only import
 
 const studentAxios: AxiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://anandaraj-sir-project-1-backend.onrender.com/api",
 });
 
 studentAxios.interceptors.request.use((config: InternalAxiosRequestConfig) => {
