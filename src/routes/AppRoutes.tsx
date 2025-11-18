@@ -20,51 +20,40 @@ const RouteWrapper = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    // Show loader on route change
     setLoading(true);
     const timeout = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timeout);
   }, [location]);
 
+  if (loading) {
+    return <Loader />; // Show loader before routes
+  }
+
   return (
-    <>
-     
-      <Routes>
-        {/* 👇 Default route redirects to student login */}
-        <Route path="/" element={<Navigate to="/student/login" replace />} />
+    <Routes>
+      {/* Default route redirects to student login */}
+      <Route path="/" element={<Navigate to="/student/login" replace />} />
 
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-         <Route path="/admin/students" element={<StudentList />} />
-         
-        <Route path="/admin/subjects/:subjectId" element={<SubjectDetails />} />
-        <Route
-          path="/admin/subjects/:subjectId/units/create"
-          element={<CreateUnit />}
-        />
-        <Route
-          path="/admin/subjects/:subjectId/units/:unitId"
-          element={<UnitDetails />}
-        />
+      {/* Admin Routes */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/admin/students" element={<StudentList />} />
+      <Route path="/admin/subjects/:subjectId" element={<SubjectDetails />} />
+      <Route path="/admin/subjects/:subjectId/units/create" element={<CreateUnit />} />
+      <Route path="/admin/subjects/:subjectId/units/:unitId" element={<UnitDetails />} />
 
-        <Route path="/student/login" element={<StudentLogin />} />
-        <Route path="/student/setup" element={<StudentProfileSetup />} />
-        <Route path="/student/dashboard" element={<StudentDashboard />} />
-        <Route
-          path="/student/subjects/:subjectId"
-          element={<StudentSubjectDetails />}
-        />
-        <Route
-          path="/student/subjects/:subjectId/units/:unitId"
-          element={<StudentUnitDetails />}
-        />
-        <Route
-          path="/student/subjects/:subjectId/units/:unitId/selftest"
-          element={<SelfTestPage />}
-        />
+      {/* Student Routes */}
+      <Route path="/student/login" element={<StudentLogin />} />
+      <Route path="/student/setup" element={<StudentProfileSetup />} />
+      <Route path="/student/dashboard" element={<StudentDashboard />} />
+      <Route path="/student/subjects/:subjectId" element={<StudentSubjectDetails />} />
+      <Route path="/student/subjects/:subjectId/units/:unitId" element={<StudentUnitDetails />} />
+      <Route path="/student/subjects/:subjectId/units/:unitId/selftest" element={<SelfTestPage />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+      {/* 404 */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

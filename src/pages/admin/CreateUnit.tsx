@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FileText, Upload, ArrowLeft, Sparkles } from "lucide-react";
-import Sidebar from "../../components/Sidebar";
+// import Sidebar from "../../components/Sidebar";
 // import { Navbar } from "../../components/Navbar";
 import axiosInstance from "../../api/axios";
 

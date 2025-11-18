@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, X, LogOut, LayoutDashboard } from "lucide-react";
+import {  X, LogOut, LayoutDashboard } from "lucide-react";
 
 interface AdminSidebarProps {
   adminName: string;
@@ -10,7 +10,6 @@ interface AdminSidebarProps {
 }
 
 const Sidebar: React.FC<AdminSidebarProps> = ({
-  adminName,
   isSidebarOpen,
   setIsSidebarOpen,
   handleLogout,
